@@ -45,5 +45,24 @@ public class PlayerStats : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+    public void TakeDamage(int damage)
+    {
+        if (damage <= 0) return;
+        int actualDamage = Mathf.Max(1, damage - defense);
+
+        currentHP = Mathf.Max(0, currentHP - actualDamage);
+
+        OnStatsChanged?.Invoke();
+
+        if (currentHP == 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log("Игрок погиб!");
+    }
 
 }

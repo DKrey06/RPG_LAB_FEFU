@@ -10,6 +10,15 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int dexterity = 10;
     [SerializeField] private int defense = 10;
     [SerializeField] private int xpToNextLevelBase = 100;
+    [SerializeField] private float xpMultiplierPerLevel = 1.5f; //множитель опыта для следующего уровня
+
+    //Повышение основных статов на эти параметры ниже при повышении уровня
+    [SerializeField] private int hpPerLevel = 10;
+    [SerializeField] private int mpPerLevel = 5;
+    [SerializeField] private int strengthPerLevel = 2;
+    [SerializeField] private int dexterityPerLevel = 2;
+    [SerializeField] private int defensePerLevel = 1;
+
 
     private int currentHP;
     private int currentMP;
@@ -23,17 +32,19 @@ public class PlayerStats : MonoBehaviour
     public int MaxMP => maxMP;
     public int Level => level;
     public int CurrentXP => currentXP;
+    public int XPToNextLevel => xpToNextLevel;
     public int Strength => strength;
     public int Dexterity => dexterity;
     public int Defense => defense;
 
     public event System.Action OnStatsChanged;
+    public event System.Action<int> OnLevelUp; //событие при повышении уровня, то есть передает новый уровень
 
     private void Awake()
     {
         currentHP = maxHP;
         currentMP = maxMP;
-        xpToNextLevel = xpToNextLevelBase;
+        xpToNextLevel = CalculateXPForLevel(level+1);
         OnStatsChanged?.Invoke();
 
         var existingPlayer = GameObject.FindWithTag("Player");
@@ -45,6 +56,69 @@ public class PlayerStats : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+
+    //Получение опыта
+    public void AddExperience(int xpAmout)
+    {
+        if (xpAmout <= 0) return;
+
+        currentXP += xpAmout;
+        Debug.Log($"Получено {xpAmout} опыта. Всего {currentXP}/{xpToNextLevel}");
+
+        //Посмотрим хватает ли чтобы повысить уровень
+        while (currentXP >= xpToNextLevel && level < 100)//Ограничим макс уровень 100 пока что
+        {
+            LevelUp();
+        }
+        OnStatsChanged?.Invoke();
+
+    }
+
+    //Повышение уровня
+    private void LevelUp()
+    {
+        level++;
+        int excessXP = currentXP - xpToNextLevel;
+        currentXP = excessXP;
+
+        xpToNextLevel = CalculateXPForLevel(level + 1); //рассчет необходимого опыта для след. уровня
+
+        //Повышаем статы
+        maxHP += hpPerLevel;
+        maxMP += mpPerLevel;
+        strength += strengthPerLevel;
+        dexterity += dexterityPerLevel;
+        defense += defensePerLevel;
+
+        //Пусть при повышении уровня будет востанавливаться хп и маны
+        currentHP = maxHP;
+        currentMP = maxMP;
+
+        Debug.LogWarning($"Уровень повышен! Текущий уровень: {level}");
+        Debug.LogWarning($"Характеристики: HP +{hpPerLevel}, MP +{mpPerLevel}, Сила +{strengthPerLevel}, Ловкость +{dexterityPerLevel}, Защита +{defensePerLevel}");
+
+        OnLevelUp?.Invoke(level);
+        OnStatsChanged?.Invoke();
+    }
+
+    private int CalculateXPForLevel(int targetLevel)
+    {
+        if (targetLevel <= 1) return 0;
+        return Mathf.RoundToInt(xpToNextLevelBase * Mathf.Pow(xpMultiplierPerLevel, targetLevel - 2)); //базовый опыт * множитель^(уровень-1)
+    }
+
+    public float GetLevelProgress() //для прогресса до след. уровня
+    {
+        if (level >= 100) return 1f;
+
+        int xpForCurrentLevel = CalculateXPForLevel(level);
+        int xpEarnedThisLevel = currentXP;
+        int xpNeededThisLevel = xpToNextLevel - xpForCurrentLevel;
+
+        return Mathf.Clamp01((float)xpEarnedThisLevel / xpNeededThisLevel);
+    }
+
+
     public void TakeDamage(int damage)
     {
         if (damage <= 0) return;
@@ -63,6 +137,22 @@ public class PlayerStats : MonoBehaviour
     private void Die()
     {
         Debug.Log("Игрок погиб!");
+        currentXP = Mathf.Max(0, currentXP - (int)(currentXP * 0.1f)); //потеря опыта при смерти
+        OnStatsChanged?.Invoke();
     }
 
+
+    //Пока методы для востановления здоровья и маны нигде не используются, но в целом пригодится :)
+
+    public void Heal(int amount)
+    {
+        currentHP = Mathf.Min(maxHP, currentHP + amount);
+        OnStatsChanged?.Invoke();
+    }
+
+    public void RestoreMP(int amount)
+    {
+        currentMP = Mathf.Min(maxMP, currentMP + amount);
+        OnStatsChanged?.Invoke();
+    }
 }

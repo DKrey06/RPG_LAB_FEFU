@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private int damageToPlayer = 10;
     [SerializeField] private float damageCooldown = 1f;
+    [SerializeField] private int experienceReward = 20; //опыт за убийство врага 
 
     private int currentHealth;
     private SpriteRenderer spriteRenderer;
@@ -24,7 +25,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    // Урон от игрока
+    //Урон от игрока
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
@@ -72,6 +73,19 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Debug.Log("Враг повержен!");
+
+        //Даем опыт игроку
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            PlayerStats playerStats = player.GetComponent<PlayerStats>();
+            if (playerStats != null)
+            {
+                playerStats.AddExperience(experienceReward);
+                Debug.Log($"Игрок получил {experienceReward} опыта!");
+            }
+        }
+
         Destroy(gameObject);
     }
 }

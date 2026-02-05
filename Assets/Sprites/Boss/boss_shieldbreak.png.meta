@@ -1,0 +1,1309 @@
+fileFormatVersion: 2
+guid: 7bb1c8ba423c89740951c75444c2783a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1509510754567385537
+    second: boss_shieldbreak_0
+  - first:
+      213: 3553782633953257084
+    second: boss_shieldbreak_1
+  - first:
+      213: -4921744953047626188
+    second: boss_shieldbreak_2
+  - first:
+      213: 1631699773383883483
+    second: boss_shieldbreak_3
+  - first:
+      213: -5797270255539468330
+    second: boss_shieldbreak_4
+  - first:
+      213: 4437693139599567536
+    second: boss_shieldbreak_5
+  - first:
+      213: 6270638675821776004
+    second: boss_shieldbreak_6
+  - first:
+      213: -3274417858285814315
+    second: boss_shieldbreak_7
+  - first:
+      213: -7945642502017597244
+    second: boss_shieldbreak_8
+  - first:
+      213: -662711428096819157
+    second: boss_shieldbreak_9
+  - first:
+      213: -4850280200816661750
+    second: boss_shieldbreak_10
+  - first:
+      213: 991033250209921705
+    second: boss_shieldbreak_11
+  - first:
+      213: 7619511461943545291
+    second: boss_shieldbreak_12
+  - first:
+      213: -3030750822768922463
+    second: boss_shieldbreak_13
+  - first:
+      213: -1849292214454549826
+    second: boss_shieldbreak_14
+  - first:
+      213: 5929378734424620733
+    second: boss_shieldbreak_15
+  - first:
+      213: -9076189439184623807
+    second: boss_shieldbreak_16
+  - first:
+      213: 5506575275523919597
+    second: boss_shieldbreak_17
+  - first:
+      213: -8517410309930433835
+    second: boss_shieldbreak_18
+  - first:
+      213: 3719964228524627558
+    second: boss_shieldbreak_19
+  - first:
+      213: 9058450383481490806
+    second: boss_shieldbreak_20
+  - first:
+      213: 2503108704066208878
+    second: boss_shieldbreak_21
+  - first:
+      213: 4904986370809399772
+    second: boss_shieldbreak_22
+  - first:
+      213: 3829256103105046993
+    second: boss_shieldbreak_23
+  - first:
+      213: -225600205803539557
+    second: boss_shieldbreak_24
+  - first:
+      213: 6399752263283579105
+    second: boss_shieldbreak_25
+  - first:
+      213: -6593255061685642123
+    second: boss_shieldbreak_26
+  - first:
+      213: -1549685432423795543
+    second: boss_shieldbreak_27
+  - first:
+      213: 8286180334517549228
+    second: boss_shieldbreak_28
+  - first:
+      213: 5156162607632022877
+    second: boss_shieldbreak_29
+  - first:
+      213: 3128066298551737000
+    second: boss_shieldbreak_30
+  - first:
+      213: -5269697488422062757
+    second: boss_shieldbreak_31
+  - first:
+      213: 1138807118034643620
+    second: boss_shieldbreak_32
+  - first:
+      213: -6988474434910321374
+    second: boss_shieldbreak_33
+  - first:
+      213: -4760253911865142520
+    second: boss_shieldbreak_34
+  - first:
+      213: -3946841510222274273
+    second: boss_shieldbreak_35
+  - first:
+      213: -8017108713604678706
+    second: boss_shieldbreak_36
+  - first:
+      213: -3415294052379289208
+    second: boss_shieldbreak_37
+  - first:
+      213: -2629778475365935163
+    second: boss_shieldbreak_38
+  - first:
+      213: 1767756300698608687
+    second: boss_shieldbreak_39
+  - first:
+      213: -9177097736519384054
+    second: boss_shieldbreak_40
+  - first:
+      213: -8488060802034410119
+    second: boss_shieldbreak_41
+  - first:
+      213: -9208416137496991359
+    second: boss_shieldbreak_42
+  - first:
+      213: -3154772795064144569
+    second: boss_shieldbreak_43
+  - first:
+      213: 4051021982406843720
+    second: boss_shieldbreak_44
+  - first:
+      213: 4286032675010959795
+    second: boss_shieldbreak_45
+  - first:
+      213: -3432425743988278571
+    second: boss_shieldbreak_46
+  - first:
+      213: 2629453604225195783
+    second: boss_shieldbreak_47
+  - first:
+      213: -1943513123508475360
+    second: boss_shieldbreak_48
+  - first:
+      213: 4865094760342068326
+    second: boss_shieldbreak_49
+  - first:
+      213: 3271614096298161777
+    second: boss_shieldbreak_50
+  - first:
+      213: -8456924475380759702
+    second: boss_shieldbreak_51
+  - first:
+      213: -5197434258874500303
+    second: boss_shieldbreak_52
+  - first:
+      213: 1588867655555290316
+    second: boss_shieldbreak_53
+  - first:
+      213: -7761803883408953146
+    second: boss_shieldbreak_54
+  - first:
+      213: 3205686987730886750
+    second: boss_shieldbreak_55
+  - first:
+      213: -1592329596687156679
+    second: boss_shieldbreak_56
+  - first:
+      213: -2532393945581620741
+    second: boss_shieldbreak_57
+  - first:
+      213: -4653490943189814463
+    second: boss_shieldbreak_58
+  - first:
+      213: -8113334556723475916
+    second: boss_shieldbreak_59
+  - first:
+      213: -5302063506334285788
+    second: boss_shieldbreak_60
+  - first:
+      213: -6689940875054105124
+    second: boss_shieldbreak_61
+  - first:
+      213: -7772769323387352025
+    second: boss_shieldbreak_62
+  - first:
+      213: 30360632783794498
+    second: boss_shieldbreak_63
+  - first:
+      213: -7354220223924914586
+    second: boss_shieldbreak_64
+  - first:
+      213: 21701452604477994
+    second: boss_shieldbreak_65
+  - first:
+      213: 6057726402508685685
+    second: boss_shieldbreak_66
+  - first:
+      213: -7445963122845486552
+    second: boss_shieldbreak_67
+  - first:
+      213: 5061695804381250931
+    second: boss_shieldbreak_68
+  - first:
+      213: 8044057908077171362
+    second: boss_shieldbreak_69
+  - first:
+      213: -7610083306241098367
+    second: boss_shieldbreak_70
+  - first:
+      213: -6585379386510220404
+    second: boss_shieldbreak_71
+  - first:
+      213: -3034593560793740633
+    second: boss_shieldbreak_72
+  - first:
+      213: -1714432391295810364
+    second: boss_shieldbreak_73
+  - first:
+      213: 727955604579747280
+    second: boss_shieldbreak_74
+  - first:
+      213: -4789764479612466380
+    second: boss_shieldbreak_75
+  - first:
+      213: 4241074305319590388
+    second: boss_shieldbreak_76
+  - first:
+      213: -7243321818939737259
+    second: boss_shieldbreak_77
+  - first:
+      213: -2829943558987865598
+    second: boss_shieldbreak_78
+  - first:
+      213: 4870026286782061755
+    second: boss_shieldbreak_79
+  - first:
+      213: -5614280319093217709
+    second: boss_shieldbreak_80
+  - first:
+      213: 5892552264554715061
+    second: boss_shieldbreak_81
+  - first:
+      213: 3579048291654048488
+    second: boss_shieldbreak_82
+  - first:
+      213: 4331042965858665033
+    second: boss_shieldbreak_83
+  - first:
+      213: -5350006075060715708
+    second: boss_shieldbreak_84
+  - first:
+      213: -2076771836576923401
+    second: boss_shieldbreak_85
+  - first:
+      213: -3327780556730712463
+    second: boss_shieldbreak_86
+  - first:
+      213: 6761571695356321307
+    second: boss_shieldbreak_87
+  - first:
+      213: 6781316755339712347
+    second: boss_shieldbreak_88
+  - first:
+      213: 1276381741945113159
+    second: boss_shieldbreak_89
+  - first:
+      213: -3778700902237135316
+    second: boss_shieldbreak_90
+  - first:
+      213: 6823564176780017326
+    second: boss_shieldbreak_91
+  - first:
+      213: 2489531871520768781
+    second: boss_shieldbreak_92
+  - first:
+      213: 4277253204211035649
+    second: boss_shieldbreak_93
+  - first:
+      213: -3526526873380107846
+    second: boss_shieldbreak_94
+  - first:
+      213: 6834196075864530020
+    second: boss_shieldbreak_95
+  - first:
+      213: 1864022114566213780
+    second: boss_shieldbreak_96
+  - first:
+      213: -2270095553257367160
+    second: boss_shieldbreak_97
+  - first:
+      213: 2154628061213047174
+    second: boss_shieldbreak_98
+  - first:
+      213: -5895675642576848237
+    second: boss_shieldbreak_99
+  - first:
+      213: -4986263148430798798
+    second: boss_shieldbreak_100
+  - first:
+      213: -4636653197819089104
+    second: boss_shieldbreak_101
+  - first:
+      213: -1358092344558331109
+    second: boss_shieldbreak_102
+  - first:
+      213: 1791992995483510709
+    second: boss_shieldbreak_103
+  - first:
+      213: -6890425671209429616
+    second: boss_shieldbreak_104
+  - first:
+      213: 7294967220144334465
+    second: boss_shieldbreak_105
+  - first:
+      213: -3318943244136998241
+    second: boss_shieldbreak_106
+  - first:
+      213: -8425264850620597129
+    second: boss_shieldbreak_107
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss_shieldbreak_30
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 58
+        width: 202
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -1114, y: -1171}
+        - {x: -893, y: -1171}
+        - {x: -893, y: -870}
+        - {x: -1114, y: -870}
+      - - {x: -701, y: -1178}
+        - {x: -487, y: -1178}
+        - {x: -487, y: -855}
+        - {x: -701, y: -855}
+      - - {x: -308, y: -1181}
+        - {x: -66, y: -1181}
+        - {x: -66, y: -858}
+        - {x: -308, y: -858}
+      - - {x: 60, y: -1163}
+        - {x: 349, y: -1163}
+        - {x: 349, y: -881}
+        - {x: 60, y: -881}
+      - - {x: 461, y: -1169}
+        - {x: 774, y: -1169}
+        - {x: 774, y: -891}
+        - {x: 461, y: -891}
+      - - {x: 858, y: -1168}
+        - {x: 1174, y: -1168}
+        - {x: 1174, y: -896}
+        - {x: 858, y: -896}
+      - - {x: 922, y: -765}
+        - {x: 1142, y: -765}
+        - {x: 1142, y: -463}
+        - {x: 922, y: -463}
+      - - {x: 483, y: -762}
+        - {x: 732, y: -762}
+        - {x: 732, y: -457}
+        - {x: 483, y: -457}
+      - - {x: 63, y: -757}
+        - {x: 340, y: -757}
+        - {x: 340, y: -449}
+        - {x: 63, y: -449}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1fe96980cd2f410800000000000000
+      internalID: 1509510754567385537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_31
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 65
+        width: 193
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0764ffdec0481141a1b63392702ccae
+      internalID: 797821838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_32
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 55
+        width: 212
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5970162aa6e19a14b9ac28c9da64daff
+      internalID: -439578247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_33
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 71
+        width: 293
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e731c72d1dd057f4999471b08a515eb5
+      internalID: -833980542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_34
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 70
+        width: 321
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05371874d4a258749b2dde37db9646f9
+      internalID: -2038306755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_35
+      rect:
+        serializedVersion: 2
+        x: 2070
+        y: 70
+        width: 322
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b28846c61440824c9c531f05b1969f2
+      internalID: -1274937807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_29
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 465
+        width: 231
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34fb9f852daa3e41951a20aba695484
+      internalID: 1398373657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_28
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 463
+        width: 254
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad14647bd8be13442892d5ec2208da82
+      internalID: 1039331711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_27
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 469
+        width: 254
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f975b9f039f3c48b8afaf031be5492
+      internalID: 1488915346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_26
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 475
+        width: 231
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d094fe4ddc1bd44b271bf41c515d46
+      internalID: -1258735239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_25
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 473
+        width: 224
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b745bee1df60c94bb44f37c6f36e729
+      internalID: -738189952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_24
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 475
+        width: 211
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b073740752830444bf6cbd7ec27d89b
+      internalID: -212004822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_18
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 872
+        width: 350
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f5173f2f5e19154992ee49e010b0235
+      internalID: 755627031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_19
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 878
+        width: 393
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35735a58d11a90149a23565aeaeb4450
+      internalID: -10318175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_20
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 879
+        width: 404
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49a83bec93393740b849f6c219cc9f7
+      internalID: 2035596578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_21
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 876
+        width: 325
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e617b45d8aff02e45a74a0ff459ed58e
+      internalID: 664434547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_22
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 871
+        width: 317
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93025ec29255a964b8f029e440a6f591
+      internalID: 1440639471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_23
+      rect:
+        serializedVersion: 2
+        x: 2090
+        y: 873
+        width: 328
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be454cb0836b2b44684ed43199b21548
+      internalID: -1078513008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_12
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1288
+        width: 306
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54aad3f2d3bfc74a9bda1008f8f7358
+      internalID: 2034597172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_13
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 1290
+        width: 304
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8837057caff210a4794b4b0fa838ac1c
+      internalID: 1485371731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_14
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1292
+        width: 336
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f2d7182b056774493a38cb9af9166d
+      internalID: -220389453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_15
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1286
+        width: 345
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c6f04dfce13cc4da11ccbd943daa78
+      internalID: -1632604317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_16
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 1285
+        width: 357
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59cc2f39060fac54b813001c10816831
+      internalID: -148193985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_17
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 1278
+        width: 381
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8acaf3f1bd0b2ac41864936d63f29c94
+      internalID: 406290056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_11
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 1700
+        width: 290
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f9565947e21ab409215bece55e4b62
+      internalID: 1403915651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_10
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 1704
+        width: 289
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244e3596699baf148a30fc444d930a80
+      internalID: 349119408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_9
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 1704
+        width: 253
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9020984e05538ce4d9831374ad041107
+      internalID: -942891626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_8
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1700
+        width: 236
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da54b0cff2ab7264a981e64e0f24c466
+      internalID: -497936684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_7
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1696
+        width: 226
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cfa38fc283616a41810d156d8d1c431
+      internalID: 1889135971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_6
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 1694
+        width: 204
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b64aa57738f6a644b7aab27960854ac
+      internalID: 1016288749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_5
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 2104
+        width: 204
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cae48906101d044bafec94e58bb8a4
+      internalID: -391558783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_4
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 2102
+        width: 218
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698c4dbb3aa50174d86dc98b9f4e5b77
+      internalID: 408320509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_3
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 2104
+        width: 223
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dcbac76a8c5dac4394238a4175db670
+      internalID: -1539571159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_2
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 2107
+        width: 228
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a60ee75a5c39d74e9915f4a1d57d2f8
+      internalID: 969771555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_1
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 2110
+        width: 206
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7697f22592a44774683d81048cce0b42
+      internalID: 660492340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_shieldbreak_0
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 2106
+        width: 204
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d737b257b60104ca99e97e5be5abc3
+      internalID: 719577165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8ca1cc37da1f8554e9b3b09fe91e3c61
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":2448.0,"y":2448.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":3,"keepEmptyRects":false,"isAlternate":false}'
+      - key: SpriteEditor.SliceOnImport
+        value: False
+    nameFileIdTable:
+      boss_shieldbreak_0: 719577165
+      boss_shieldbreak_1: 660492340
+      boss_shieldbreak_10: 349119408
+      boss_shieldbreak_11: 1403915651
+      boss_shieldbreak_12: 2034597172
+      boss_shieldbreak_13: 1485371731
+      boss_shieldbreak_14: -220389453
+      boss_shieldbreak_15: -1632604317
+      boss_shieldbreak_16: -148193985
+      boss_shieldbreak_17: 406290056
+      boss_shieldbreak_18: 755627031
+      boss_shieldbreak_19: -10318175
+      boss_shieldbreak_2: 969771555
+      boss_shieldbreak_20: 2035596578
+      boss_shieldbreak_21: 664434547
+      boss_shieldbreak_22: 1440639471
+      boss_shieldbreak_23: -1078513008
+      boss_shieldbreak_24: -212004822
+      boss_shieldbreak_25: -738189952
+      boss_shieldbreak_26: -1258735239
+      boss_shieldbreak_27: 1488915346
+      boss_shieldbreak_28: 1039331711
+      boss_shieldbreak_29: 1398373657
+      boss_shieldbreak_3: -1539571159
+      boss_shieldbreak_30: 1509510754567385537
+      boss_shieldbreak_31: 797821838
+      boss_shieldbreak_32: -439578247
+      boss_shieldbreak_33: -833980542
+      boss_shieldbreak_34: -2038306755
+      boss_shieldbreak_35: -1274937807
+      boss_shieldbreak_4: 408320509
+      boss_shieldbreak_5: -391558783
+      boss_shieldbreak_6: 1016288749
+      boss_shieldbreak_7: 1889135971
+      boss_shieldbreak_8: -497936684
+      boss_shieldbreak_9: -942891626
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

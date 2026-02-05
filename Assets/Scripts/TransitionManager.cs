@@ -16,7 +16,7 @@ public class TransitionManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);    
+            Destroy(gameObject);
         }
     }
 
@@ -27,7 +27,7 @@ public class TransitionManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (_player == null)
         {
@@ -37,13 +37,13 @@ public class TransitionManager : MonoBehaviour
 
         if (!string.IsNullOrEmpty(_targetSpawnPointName))
         {
-            var spawn = GameObject.Find(_targetSpawnPointName);
+            GameObject spawn = GameObject.Find(_targetSpawnPointName);
             if (spawn != null && _player != null)
             {
                 _player.position = spawn.transform.position;
             }
         }
-
+        _targetSpawnPointName = null;
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

@@ -350,7 +350,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: -1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1124f1cf443604fa5769070a018b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
+  _moveSpeed: 5
 --- !u!50 &1355437113
 Rigidbody2D:
   serializedVersion: 5
@@ -1224,13 +1224,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eeb255225660fb4d9686776a1faedd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  attackRange: 0.8
-  attackCooldown: 0.5
-  baseAttackDamage: 10
+  attack_range: 1.2
+  attack_cooldown: 0.5
+  attack_damage: 10
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  attackRadius: 0.5
+  attack_color: {r: 1, g: 0, b: 0, a: 1}
+  attack_flashTime: 0.3
+  attack_radius: 0.5
   showAttackGizmo: 1
   gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   alwaysShowInGame: 1

@@ -26,6 +26,10 @@ public class PlayerStats : MonoBehaviour
     private int currentXP = 0;
     private int xpToNextLevel;
 
+    private PlayerAnimatorController animController;
+    private PlayerMovement playerMovement;
+    private PlayerCombat playerCombat;
+
     public int CurrentHP => currentHP;
     public int MaxHP => maxHP;
     public int CurrentMP => currentMP;
@@ -42,11 +46,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
-        currentHP = maxHP;
-        currentMP = maxMP;
-        xpToNextLevel = CalculateXPForLevel(level+1);
-        OnStatsChanged?.Invoke();
-
+        //Singleton - только один игрок на сцену
         var existingPlayer = GameObject.FindWithTag("Player");
         if (existingPlayer != null && existingPlayer != this.gameObject)
         {
@@ -55,6 +55,20 @@ public class PlayerStats : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        currentHP = maxHP;
+        currentMP = maxMP;
+        xpToNextLevel = CalculateXPForLevel(level + 1);
+
+        animController = GetComponent<PlayerAnimatorController>();
+        playerMovement = GetComponent<PlayerMovement>();
+        playerCombat = GetComponent<PlayerCombat>();
+
+        Debug.Log("PlayerStats инициализирован");
+        OnStatsChanged?.Invoke();
     }
 
     //Получение опыта
@@ -71,7 +85,6 @@ public class PlayerStats : MonoBehaviour
             LevelUp();
         }
         OnStatsChanged?.Invoke();
-
     }
 
     //Повышение уровня
@@ -118,13 +131,20 @@ public class PlayerStats : MonoBehaviour
         return Mathf.Clamp01((float)xpEarnedThisLevel / xpNeededThisLevel);
     }
 
-
     public void TakeDamage(int damage)
     {
-        if (damage <= 0) return;
+        if (damage <= 0 || currentHP <= 0 || animController?.IsDead() == true) return;
+
         int actualDamage = Mathf.Max(1, damage - defense);
 
         currentHP = Mathf.Max(0, currentHP - actualDamage);
+        Debug.Log($"Получено {actualDamage} урона. HP: {currentHP}/{maxHP}");
+
+        //Анимация получения урона
+        if (animController != null)
+        {
+            animController.TriggerHurt();
+        }
 
         OnStatsChanged?.Invoke();
 
@@ -138,21 +158,41 @@ public class PlayerStats : MonoBehaviour
     {
         Debug.Log("Игрок погиб!");
         currentXP = Mathf.Max(0, currentXP - (int)(currentXP * 0.1f)); //потеря опыта при смерти
+
+        //Анимация смерти
+        if (animController != null)
+        {
+            animController.TriggerDeath();
+        }
+
+        //Отключаем управление
+        if (playerMovement != null) playerMovement.enabled = false;
+        if (playerCombat != null) playerCombat.enabled = false;
+
         OnStatsChanged?.Invoke();
     }
 
-
     //Пока методы для востановления здоровья и маны нигде не используются, но в целом пригодится :)
-
     public void Heal(int amount)
     {
+        if (amount <= 0) return;
+
         currentHP = Mathf.Min(maxHP, currentHP + amount);
+        Debug.Log($"Восстановлено {amount} HP. Текущее: {currentHP}/{maxHP}");
         OnStatsChanged?.Invoke();
     }
 
     public void RestoreMP(int amount)
     {
+        if (amount <= 0) return;
+
         currentMP = Mathf.Min(maxMP, currentMP + amount);
+        Debug.Log($"Восстановлено {amount} MP. Текущее: {currentMP}/{maxMP}");
         OnStatsChanged?.Invoke();
     }
+
+    //Тестовые методы
+    public void TestTakeDamage() => TakeDamage(5);
+    public void TestAddXP() => AddExperience(50);
+    public void TestHeal() => Heal(10);
 }

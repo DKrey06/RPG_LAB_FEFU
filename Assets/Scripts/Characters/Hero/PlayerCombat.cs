@@ -15,12 +15,18 @@ public class PlayerCombat : MonoBehaviour
     //Редактор
     [SerializeField] private bool showAttackGizmo = true;
     [SerializeField] private Color gizmoColor = Color.yellow;
+    [SerializeField] private bool alwaysShowInGame = true;
 
     //Переменные
     private bool can_attack = true;
     private SpriteRenderer spriteRenderer;
     private Color original_color;
     private Vector2 lastAttackDirection = Vector2.right; //храним последнее направление
+
+    private PlayerMovement playerMovement;
+    private PlayerStats playerStats;
+    private PlayerAnimatorController animController;
+    private float lastAttackTime; //время последней атаки
 
     void Start()
     {
@@ -30,8 +36,11 @@ public class PlayerCombat : MonoBehaviour
         {
             original_color = spriteRenderer.color;
         }
-    }
 
+        playerMovement = GetComponent<PlayerMovement>();
+        playerStats = GetComponent<PlayerStats>();
+        animController = GetComponent<PlayerAnimatorController>();
+    }
 
     void Update()
     {
@@ -45,12 +54,14 @@ public class PlayerCombat : MonoBehaviour
 
     void UpdateAttackDirection()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        if (horizontal != 0 || vertical != 0)
+        //Используем направление движения для атаки
+        if (playerMovement != null)
         {
-            lastAttackDirection = new Vector2(horizontal, vertical).normalized;
+            Vector2 moveDir = playerMovement.GetLastMoveDirection();
+            if (moveDir.magnitude > 0.1f)
+            {
+                lastAttackDirection = moveDir;
+            }
         }
     }
 
@@ -59,15 +70,17 @@ public class PlayerCombat : MonoBehaviour
         if (can_attack != true) return;
 
         can_attack = false;
+        lastAttackTime = Time.time;
         Invoke(nameof(ResetAttack), attack_cooldown);
 
-        //Смена цвета
-        if (spriteRenderer != null)
+        //Анимация атаки
+        if (animController != null)
         {
-            Debug.Log("Смена цвета");
-            spriteRenderer.color = attack_color;
-            Invoke(nameof(ResetColor), attack_flashTime);
+            animController.SetAttacking(true);
         }
+
+        //Рассчитываем итоговый урон с учетом силы
+        int finalDamage = attack_damage + (playerStats?.Strength ?? 0);
 
         //Используем последнее сохраненное направление
         Vector2 attackDirection = lastAttackDirection;
@@ -78,19 +91,20 @@ public class PlayerCombat : MonoBehaviour
         Debug.Log($"Направление атаки: {attackDirection}");
         Debug.Log($"Позиция атаки: {attackPosition}");
         Debug.Log($"Радиус атаки: {attack_range}");
+        Debug.Log($"Итоговый урон: {finalDamage}");
 
-        //Попадание по врагам 
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(attackPosition, attack_radius, Vector2.zero, 0, enemyLayer);
+        //Попадание по врагам (используем OverlapCircleAll вместо CircleCastAll)
+        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPosition, attack_radius, enemyLayer);
         Debug.Log($"Найдено объектов: {hits.Length}");
 
-        foreach (RaycastHit2D hit in hits)
+        foreach (Collider2D hit in hits)
         {
-            Debug.Log($"Попал в объект: {hit.collider.name}");
-            Enemy enemy = hit.collider.GetComponent<Enemy>();
+            Debug.Log($"Попал в объект: {hit.name}");
+            Enemy enemy = hit.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(attack_damage);
-                Debug.LogWarning($"Попал! Урон: {attack_damage}");
+                enemy.TakeDamage(finalDamage);
+                Debug.LogWarning($"Попал! Урон: {finalDamage}");
             }
         }
     }
@@ -103,6 +117,12 @@ public class PlayerCombat : MonoBehaviour
     void ResetAttack()
     {
         can_attack = true;
+
+        if (animController != null)
+        {
+            animController.SetAttacking(false);
+            Debug.Log("Атака завершена");
+        }
     }
 
     void ResetColor()
@@ -112,6 +132,8 @@ public class PlayerCombat : MonoBehaviour
             spriteRenderer.color = original_color;
         }
     }
+
+    public bool CanAttack() => can_attack; //новый метод
 
     //Для отладки визуализация радиуса в редакторе
     void OnDrawGizmosSelected()
@@ -131,12 +153,13 @@ public class PlayerCombat : MonoBehaviour
     //Также рисуем не только при выделении
     void OnDrawGizmos()
     {
-        if (!showAttackGizmo || !Application.isPlaying) return;
+        if (!showAttackGizmo || !Application.isPlaying || !alwaysShowInGame) return;
 
         Vector2 attackDirection = lastAttackDirection;
         Gizmos.color = new Color(gizmoColor.r, gizmoColor.g, gizmoColor.b, 0.3f);//полупрозрачный
 
         Vector2 attackPosition = (Vector2)transform.position + attackDirection * attack_range;//зону атаки всегда в режиме игры
         Gizmos.DrawWireSphere(attackPosition, attack_radius);
+        Gizmos.DrawLine(transform.position, attackPosition);//полупрозрачная линия
     }
 }

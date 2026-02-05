@@ -28,6 +28,10 @@ public class Enemy : MonoBehaviour
     //Урон от игрока
     public void TakeDamage(int damageAmount)
     {
+        //Анимация получения урона
+        EnemyAnimator enemyAnim = GetComponent<EnemyAnimator>();
+        if (enemyAnim != null) enemyAnim.TriggerHurt();
+
         currentHealth -= damageAmount;
         Debug.Log($"Враг получил {damageAmount} урона. Осталось HP: {currentHealth}");
 
@@ -47,12 +51,16 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player") && CanDealDamage())
         {
+            //Анимация атаки
+            EnemyAnimator enemyAnim = GetComponent<EnemyAnimator>();
+            if (enemyAnim != null) enemyAnim.TriggerAttack();
+
             var playerStats = other.GetComponent<PlayerStats>();
             if (playerStats != null)
             {
                 playerStats.TakeDamage(damageToPlayer);
                 lastDamageTime = Time.time;
-                Debug.LogWarning("получен урон");
+                Debug.LogWarning("Враг нанес урон игроку");
             }
         }
     }
@@ -74,6 +82,10 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Враг повержен!");
 
+        //Анимация смерти
+        EnemyAnimator enemyAnim = GetComponent<EnemyAnimator>();
+        if (enemyAnim != null) enemyAnim.TriggerDeath();
+
         //Даем опыт игроку
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
@@ -86,6 +98,7 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        //Уничтожаем через время для анимки
+        Destroy(gameObject, 1.5f);
     }
 }

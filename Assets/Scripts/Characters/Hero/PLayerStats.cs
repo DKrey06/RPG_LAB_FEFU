@@ -4,21 +4,34 @@ using System;
 [Serializable]
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] private int maxHP = 50; //приватные свойсвта, которые юнити может сохранять и загружать даже под private 
+    [Header("Основные характеристики")]
+    [SerializeField] private int maxHP = 50;
     [SerializeField] private int maxMP = 50;
     [SerializeField] private int strength = 10;
     [SerializeField] private int dexterity = 10;
-    [SerializeField] private int defense = 10;
-    [SerializeField] private int xpToNextLevelBase = 100;
-    [SerializeField] private float xpMultiplierPerLevel = 1.5f; //множитель опыта для следующего уровня
 
-    //Повышение основных статов на эти параметры ниже при повышении уровня
+    [Header("Броня")]
+    [SerializeField] private int armorLevel = 1;
+    public int ArmorLevel
+    {
+        get => armorLevel;
+        set
+        {
+            armorLevel = Mathf.Clamp(value, 1, 5);
+            OnStatsChanged?.Invoke();
+        }
+    }
+
+    [Header("Уровень и опыт")]
+    [SerializeField] private int xpToNextLevelBase = 100;
+    [SerializeField] private float xpMultiplierPerLevel = 1.5f;
+
+    [Header("Увеличение статов за уровень")]
     [SerializeField] private int hpPerLevel = 10;
     [SerializeField] private int mpPerLevel = 5;
     [SerializeField] private int strengthPerLevel = 2;
     [SerializeField] private int dexterityPerLevel = 2;
     [SerializeField] private int defensePerLevel = 1;
-
 
     private int currentHP;
     private int currentMP;
@@ -39,14 +52,13 @@ public class PlayerStats : MonoBehaviour
     public int XPToNextLevel => xpToNextLevel;
     public int Strength => strength;
     public int Dexterity => dexterity;
-    public int Defense => defense;
+    public int Defense => armorLevel * 2;
 
     public event System.Action OnStatsChanged;
-    public event System.Action<int> OnLevelUp; //событие при повышении уровня, то есть передает новый уровень
+    public event System.Action<int> OnLevelUp;
 
     private void Awake()
     {
-        //Singleton - только один игрок на сцену
         var existingPlayer = GameObject.FindWithTag("Player");
         if (existingPlayer != null && existingPlayer != this.gameObject)
         {
@@ -71,44 +83,40 @@ public class PlayerStats : MonoBehaviour
         OnStatsChanged?.Invoke();
     }
 
-    //Получение опыта
-    public void AddExperience(int xpAmout)
+    public void AddExperience(int xpAmount)
     {
-        if (xpAmout <= 0) return;
+        if (xpAmount <= 0) return;
 
-        currentXP += xpAmout;
-        Debug.Log($"Получено {xpAmout} опыта. Всего {currentXP}/{xpToNextLevel}");
+        currentXP += xpAmount;
+        Debug.Log($"Получено {xpAmount} опыта. Всего {currentXP}/{xpToNextLevel}");
 
-        //Посмотрим хватает ли чтобы повысить уровень
-        while (currentXP >= xpToNextLevel && level < 100)//Ограничим макс уровень 100 пока что
+        while (currentXP >= xpToNextLevel && level < 100)
         {
             LevelUp();
         }
+
         OnStatsChanged?.Invoke();
     }
 
-    //Повышение уровня
     private void LevelUp()
     {
         level++;
         int excessXP = currentXP - xpToNextLevel;
         currentXP = excessXP;
 
-        xpToNextLevel = CalculateXPForLevel(level + 1); //рассчет необходимого опыта для след. уровня
+        xpToNextLevel = CalculateXPForLevel(level + 1);
 
-        //Повышаем статы
         maxHP += hpPerLevel;
         maxMP += mpPerLevel;
         strength += strengthPerLevel;
         dexterity += dexterityPerLevel;
-        defense += defensePerLevel;
+        armorLevel = Mathf.Min(5, armorLevel + 1);
 
-        //Пусть при повышении уровня будет востанавливаться хп и маны
         currentHP = maxHP;
         currentMP = maxMP;
 
         Debug.LogWarning($"Уровень повышен! Текущий уровень: {level}");
-        Debug.LogWarning($"Характеристики: HP +{hpPerLevel}, MP +{mpPerLevel}, Сила +{strengthPerLevel}, Ловкость +{dexterityPerLevel}, Защита +{defensePerLevel}");
+        Debug.LogWarning($"Характеристики: HP +{hpPerLevel}, MP +{mpPerLevel}, Сила +{strengthPerLevel}, Ловкость +{dexterityPerLevel}");
 
         OnLevelUp?.Invoke(level);
         OnStatsChanged?.Invoke();
@@ -117,10 +125,10 @@ public class PlayerStats : MonoBehaviour
     private int CalculateXPForLevel(int targetLevel)
     {
         if (targetLevel <= 1) return 0;
-        return Mathf.RoundToInt(xpToNextLevelBase * Mathf.Pow(xpMultiplierPerLevel, targetLevel - 2)); //базовый опыт * множитель^(уровень-1)
+        return Mathf.RoundToInt(xpToNextLevelBase * Mathf.Pow(xpMultiplierPerLevel, targetLevel - 2));
     }
 
-    public float GetLevelProgress() //для прогресса до след. уровня
+    public float GetLevelProgress()
     {
         if (level >= 100) return 1f;
 
@@ -135,12 +143,11 @@ public class PlayerStats : MonoBehaviour
     {
         if (damage <= 0 || currentHP <= 0 || animController?.IsDead() == true) return;
 
-        int actualDamage = Mathf.Max(1, damage - defense);
+        int actualDamage = Mathf.Max(1, damage - Defense);
 
         currentHP = Mathf.Max(0, currentHP - actualDamage);
         Debug.Log($"Получено {actualDamage} урона. HP: {currentHP}/{maxHP}");
 
-        //Анимация получения урона
         if (animController != null)
         {
             animController.TriggerHurt();
@@ -157,22 +164,19 @@ public class PlayerStats : MonoBehaviour
     private void Die()
     {
         Debug.Log("Игрок погиб!");
-        currentXP = Mathf.Max(0, currentXP - (int)(currentXP * 0.1f)); //потеря опыта при смерти
+        currentXP = Mathf.Max(0, currentXP - (int)(currentXP * 0.1f));
 
-        //Анимация смерти
         if (animController != null)
         {
             animController.TriggerDeath();
         }
 
-        //Отключаем управление
         if (playerMovement != null) playerMovement.enabled = false;
         if (playerCombat != null) playerCombat.enabled = false;
 
         OnStatsChanged?.Invoke();
     }
 
-    //Пока методы для востановления здоровья и маны нигде не используются, но в целом пригодится :)
     public void Heal(int amount)
     {
         if (amount <= 0) return;
@@ -191,7 +195,6 @@ public class PlayerStats : MonoBehaviour
         OnStatsChanged?.Invoke();
     }
 
-    //Тестовые методы
     public void TestTakeDamage() => TakeDamage(5);
     public void TestAddXP() => AddExperience(50);
     public void TestHeal() => Heal(10);

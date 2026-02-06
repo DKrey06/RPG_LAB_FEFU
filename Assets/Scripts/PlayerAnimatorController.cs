@@ -89,4 +89,44 @@ public class PlayerAnimatorController : MonoBehaviour
     }
 
     public bool IsDead() => isDead;
+
+    public void ResetDeathState()
+    {
+        isDead = false;
+        isHurt = false;
+
+        if (animator != null)
+        {
+            animator.SetBool("IsDead", false);
+            animator.SetBool("IsHurt", false);
+        }
+
+    }
+
+    public void StopAllAnimations()
+    {
+        isDead = false;
+        isAttacking = false;
+        isHurt = false;
+        speed = 0f;
+
+        if (animator != null)
+        {
+            animator.SetBool("IsDead", false);
+            animator.SetBool("IsAttacking", false);
+            animator.SetBool("IsHurt", false);
+            animator.SetFloat("Speed", 0f);
+            animator.enabled = false;
+            Debug.Log("Аниматор игрока остановлен");
+        }
+    }
+
+    public void RestartAnimations()
+    {
+        if (animator != null)
+        {
+            animator.enabled = true;
+            Debug.Log("Аниматор игрока возобновлен");
+        }
+    }
 }

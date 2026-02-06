@@ -171,10 +171,25 @@ public class PlayerStats : MonoBehaviour
             animController.TriggerDeath();
         }
 
-        if (playerMovement != null) playerMovement.enabled = false;
-        if (playerCombat != null) playerCombat.enabled = false;
-
         OnStatsChanged?.Invoke();
+        ShowGameOverScreen();
+    }
+
+    private void ShowGameOverScreen()
+    {
+        GameOverManager gameOverManager = FindObjectOfType<GameOverManager>();
+        if (gameOverManager != null)
+        {
+            gameOverManager.ForceGameOver();
+        }
+        else
+        {
+            Debug.LogWarning("GameOverManager не найден в сцене!");
+            if (playerMovement != null) playerMovement.enabled = false;
+            if (playerCombat != null) playerCombat.enabled = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     public void Heal(int amount)
@@ -194,6 +209,7 @@ public class PlayerStats : MonoBehaviour
         Debug.Log($"Восстановлено {amount} MP. Текущее: {currentMP}/{maxMP}");
         OnStatsChanged?.Invoke();
     }
+
 
     public void TestTakeDamage() => TakeDamage(5);
     public void TestAddXP() => AddExperience(50);

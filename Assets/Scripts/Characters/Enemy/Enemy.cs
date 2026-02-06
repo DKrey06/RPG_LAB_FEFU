@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int damageToPlayer = 10;
     [SerializeField] private float damageCooldown = 1f;
     [SerializeField] private int experienceReward = 20; //опыт за убийство врага 
+
+    [SerializeField] private bool isBoss = false; //Галочка IsBoss в инспекторе
+    [SerializeField] private float sceneSwitchDelay = 2f; //Задержка перед переключением сцены
 
     private int currentHealth;
     private SpriteRenderer spriteRenderer;
@@ -81,7 +86,6 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Debug.Log("Враг повержен!");
-
         //Анимация смерти
         EnemyAnimator enemyAnim = GetComponent<EnemyAnimator>();
         if (enemyAnim != null) enemyAnim.TriggerDeath();
@@ -94,11 +98,39 @@ public class Enemy : MonoBehaviour
             if (playerStats != null)
             {
                 playerStats.AddExperience(experienceReward);
-                Debug.Log($"Игрок получил {experienceReward} опыта!");
             }
         }
 
-        //Уничтожаем через время для анимки
-        Destroy(gameObject, 1.5f);
+        //Если это босс - запускаем корутину перехода на сцену Titles
+        if (isBoss)
+        {
+            StartCoroutine(SwitchToTitlesSceneWithDelay());
+        }
+        else
+        {
+            //Уничтожаем через время для анимки
+            Destroy(gameObject, 1.5f);
+        }
+    }
+
+    private IEnumerator SwitchToTitlesSceneWithDelay()
+    {
+
+        yield return new WaitForSeconds(sceneSwitchDelay);
+
+        CleanUpOldPlayers();
+        Destroy(gameObject);
+
+        SceneManager.LoadScene("Titles");
+        
+    }
+
+    private void CleanUpOldPlayers()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+            Destroy(player);
+        }
     }
 }

@@ -2441,7 +2441,7 @@ MonoBehaviour:
   maxHealth: 50
   hurtColor: {r: 1, g: 0, b: 0, a: 1}
   hurtFlashTime: 0.2
-  damageToPlayer: 10
+  damageToPlayer: 18
   damageCooldown: 1
   experienceReward: 20
 --- !u!114 &2033061802
@@ -2459,7 +2459,7 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 901265116}
   - {fileID: 1600863193}
-  movespeed: 3
+  movespeed: 2
   detectionRadius: 5
 --- !u!50 &2033061803
 Rigidbody2D:

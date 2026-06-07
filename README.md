@@ -24,7 +24,7 @@ This is no longer a mission. It's a fight for survival.
 
 ## **Development**
 
-This game is a student project created for the Object-Oriented Programming (OOP) course at Far Eastern Federal University (FEFU).
+This game is a student project created at the Far Eastern Federal University (FEFU).
 
 **Development Team:**  
 © 2026 DKrey_06, Yanl1n, Fazzer1337, NiAntiSimus
